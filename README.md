@@ -94,16 +94,17 @@ tb_top  (module — hardware world)
 
 ### Set Environment
 ```bash
-export XCELIUM_HOME=/opt/cadence/installs/XCELIUM2503/tools.lnx86
-export UVM_HOME=$XCELIUM_HOME/methodology/UVM/CDNS-1.2/sv
-export PATH=$XCELIUM_HOME/bin:$PATH
+export VCS_HOME=/opt/synopsys/vcs/U-2023.03-SP1
+export UVM_HOME=$VCS_HOME/etc/uvm-1.2
+export PATH=$VCS_HOME/bin:$PATH
 ```
 
 ### Run Simulation
 ```bash
 cd tb/
 
-xrun -sv \
+vcs -sverilog \
+    -ntb_opts uvm-1.2 \
     +incdir+$UVM_HOME/src \
     $UVM_HOME/src/uvm_pkg.sv \
     ../rtl/spi_master.sv \
@@ -113,8 +114,11 @@ xrun -sv \
     -top tb_top \
     +UVM_TESTNAME=spi_basic_test \
     +UVM_VERBOSITY=UVM_MEDIUM \
-    -timescale 1ns/1ps \
-    -access +rwc
+    -timescale=1ns/1ps \
+    +acc \
+    -debug_all \
+    -o simv \
+&& ./simv +UVM_TESTNAME=spi_basic_test +UVM_VERBOSITY=UVM_MEDIUM
 ```
 
 ### Expected Output
@@ -166,22 +170,16 @@ UVM_FATAL :   0
 
 - [x] SPI RTL Design
 - [x] SPI UVM Testbench (12 files)
-- [ ] I2C RTL + UVM Testbench
-- [ ] UART RTL + UVM Testbench
-- [ ] Functional Coverage
-- [ ] Multi-protocol UVM Environment
 
 ---
 
 ## 👤 Author
 
-**Hemanth** — Verification Engineer (Learning)
-University Project — SystemVerilog UVM from Scratch
+**Hemanth Prasad Chowdary Suryadevara** 
 
 ---
 
 ## 📖 References
 
 - IEEE 1800-2017 SystemVerilog Standard
-- UVM 1.2 Class Reference — Cadence CDNS-1.2
-- Cadence Xcelium Simulator Documentation
+- Synopsys VCS Documentation
