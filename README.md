@@ -1,9 +1,7 @@
 # UVM SPI Verification Testbench
 ### SystemVerilog + UVM from Scratch — Beginner Friendly
 
-# Language : System Verilog
-# Methodology : UVM 1.2
-# Simulator : Synopsys VCS
+# Language : System Verilog # Methodology : UVM 1.2 # Simulator : Synopsys VCS
 
 ---
 
