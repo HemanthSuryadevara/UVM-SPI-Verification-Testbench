@@ -1,10 +1,9 @@
 # UVM SPI Verification Testbench
 ### SystemVerilog + UVM from Scratch — Beginner Friendly
 
-![SystemVerilog](https://img.shields.io/badge/Language-SystemVerilog-blue)
-![UVM](https://img.shields.io/badge/Methodology-UVM%201.2-green)
-![Simulator](https://img.shields.io/badge/Simulator-Xcelium%202503-orange)
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
+# Language : System Verilog
+# Methodology : UVM 1.2
+# Simulator : Synopsys VCS
 
 ---
 
