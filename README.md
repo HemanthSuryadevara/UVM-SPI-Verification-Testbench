@@ -13,10 +13,9 @@ Simulation and verification are performed using Synopsys VCS in a Linux/MobaXter
 
 ## 🧱 Project Structure
 .
-rtl
-├──├── spi_master.sv
+
+├── spi_master.sv
 ├── spi_slave.sv
-tb
 ├── spi_if.sv
 ├── spi_seq_item.sv
 ├── spi_sequence.sv
